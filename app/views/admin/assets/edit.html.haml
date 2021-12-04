@@ -1,0 +1,37 @@
+= stylesheet_link_tag 'admin/assets'
+= render_region :top 
+
+- render_region :main do |main|
+  - main.edit_header do
+    %h1= t("clipped_extension.asset_edit_title")
+  
+  - main.edit_form do
+    - form_for :asset, :url => admin_asset_path(@asset), :html => { :method => "put", :multipart => true } do |f|
+      .form_area
+        = render :partial => "form", :locals => { :f => f }
+        
+        %div.content
+          %fieldset
+            %label.filename
+              = "#{t("clipped_extension.filename")}: #{@asset.asset_file_name unless @asset.new_record?}"
+            %br
+            %label.url
+              = "#{t("clipped_extension.asset_url")}: #{image_path @asset.asset.url unless @asset.new_record?}"
+            %br
+            %label.id
+              = "#{t("clipped_extension.asset_id")}: #{@asset.id unless @asset.new_record?}"
+          %p.asset
+            = image_tag @asset.thumbnail("normal"), :class => 'preview'
+
+          = updated_stamp @asset
+        
+        %fieldset.upload
+          %label.custom-file-upload.upload
+            = t("clipped_extension.replace_file")
+            = f.file_field :asset, :class => "", :style => "width: 100%"
+        
+        .buttons
+          = save_model_button(@asset)
+          = save_model_and_continue_editing_button(@asset)
+          = t("or")
+          = link_to t("cancel"), admin_assets_path

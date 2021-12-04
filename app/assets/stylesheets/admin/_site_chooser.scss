@@ -1,0 +1,48 @@
+//colors
+
+.site_chooser {
+  border-collapse: collapse;
+  float: left;
+  padding-left: 1em;
+  width: fit-content;
+}
+
+.nav {
+  color: $white;
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+  padding: 1em;
+
+  ul {
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.2s;
+    visibility: hidden;
+
+    li {
+      padding: 0.75em 5em 0.5em 1em;
+      position: relative;
+
+      &:hover {
+        background-color: darken($dark-blue, 15%);
+        cursor: pointer;
+      }
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+  }
+
+  &:hover ul {
+    background-color: $dark-blue;
+    margin-top: 1em;
+    opacity: 1;
+    transition: opacity 0.2s;
+    visibility: visible;
+    z-index: 99999;
+  }
+}

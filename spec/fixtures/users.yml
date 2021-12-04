@@ -1,0 +1,13 @@
+captain_janeway:
+  first_name: 'Kathryn'
+  last_name: 'Janeway'
+  encrypted_password: '3MHtmC5=!By!' 
+  admin: true
+  designer: false
+
+captain_picard:
+  first_name: 'Jean-Luc'
+  last_name: 'Picard'
+  encrypted_password: 'pK_2h76VNhVr' 
+  admin: false
+  designer: true

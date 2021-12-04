@@ -1,0 +1,83 @@
+#tab_control {
+  .tabs {
+    float: left;
+    width: 100%;
+
+    .tab {
+      background-color: darken($light-gray, 5%);
+      display: inline-block;
+      font-size: 0.8em;
+      margin-right: 5px;
+      padding: 0.85em 0.5em;
+      text-decoration: none;
+
+      &.here {
+        background-color: $white;
+        color: $gray;
+        font-weight: bold;
+      }
+
+      span:hover {
+        color: $gray;
+      }
+
+      .close {
+        padding-left: .5em;
+      }
+    }
+  }
+
+  .pages {
+    background: $white;
+    clear: both;
+    margin-right: 1em;
+
+    .page {
+      background: white;
+      padding: 12px 20px 20px;
+
+      p {
+        margin-top: 0;
+      }
+
+      label {
+        color: #000;
+        display: inline;
+        font-size: 80%;
+        font-weight: normal;
+        text-shadow: none;
+      }
+    }
+
+    .reference_links {
+      float: right;
+      font-size: 85%;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.tabs {
+  #tab_toolbar {
+    float: right;
+    overflow: hidden;
+    padding: 0 1em;
+  }
+}
+
+.reference_links {
+  font-size: 85%;
+  margin-bottom: 1em;
+}
+
+#tag_reference_link {
+  margin: 0 0.5em;
+}
+
+body.reversed {
+  #tab_control {
+    textarea {
+      border: 1px solid #cccccc;
+    }
+  }
+}

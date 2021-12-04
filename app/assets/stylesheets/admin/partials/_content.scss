@@ -1,0 +1,59 @@
+main {
+  float: left;
+  grid-area: content;
+  width: 100%;
+}
+
+.reversed main {
+  .content {
+    line-height: 1.5;
+    padding: 1em;
+  }
+}
+
+table.fieldset {
+  td.field textarea {
+    margin-right: -5px;
+    width: 99.5%;
+  }
+}
+
+body.reversed {
+  fieldset h1 {
+    font-size: 1.5em;
+  }
+}
+
+.fullcover {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.clipped {
+  overflow: hidden;
+}
+
+.grey_out {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#preview_panel {
+  background: white;
+}
+
+.preview_tools {
+  color: black;
+  opacity: 0.7;
+  position: fixed;
+  right: 20px;
+  top: 10px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
